@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix --quiet ./packages"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix --quiet ./packages",
+    "build:dev": "rm -rf dist && rollup --bundleConfigAsCjs --config scripts/rollup/react.config.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eric Chen",
+  "email": "itsczzzh@gmail.com",
   "license": "ISC",
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {

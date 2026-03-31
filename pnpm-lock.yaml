@@ -112,6 +112,20 @@ importers:
         specifier: ^3.0.0
         version: 3.2.11(@types/node@25.5.0)
 
+  packages/react:
+    dependencies:
+      shared:
+        specifier: workspace:*
+        version: link:../shared
+
+  packages/react-reconciler:
+    dependencies:
+      shared:
+        specifier: workspace:*
+        version: link:../shared
+
+  packages/shared: {}
+
 packages:
 
   '@babel/code-frame@7.29.0':
