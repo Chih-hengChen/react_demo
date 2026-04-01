@@ -1,4 +1,5 @@
 import { beginWork } from './beginWork';
+import { completeWork } from './completeWork';
 import { createWorkInProgress, FiberNode, FiberRootNode } from './fiber';
 import { HostRoot } from './workTag';
 
@@ -35,10 +36,15 @@ function renderRoot(root: FiberRootNode) {
 			workLoop();
 			break;
 		} catch (error) {
-			console.log('workLoop发生错误', error);
+			if (__DEV__) {
+				console.log('workLoop发生错误', error);
+			}
 			workInProgress = null;
 		}
 	} while (true);
+
+	const finishedWork = root.current.alternate
+	root.finishedWork = finishedWork;
 }
 
 function workLoop() {
